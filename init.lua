@@ -110,6 +110,10 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
+--tab settings
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -853,13 +857,14 @@ require('lazy').setup({
     end,
   },
 
-  { "catppuccin/nvim",
-    name = "catppuccin",
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
     init = function()
       vim.cmd.colorscheme 'catppuccin-mocha'
       vim.cmd.hi 'Comment gui=none'
-    end
+    end,
   },
 
   -- Highlight todo, notes, etc in comments
